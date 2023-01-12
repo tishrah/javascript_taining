@@ -1,0 +1,32 @@
+Answer 2
+
+test(callbackFunc)
+'calling the callback function' is displayed on the screen but no value is returned and it is undefined.
+Logic behind it is that test(callbackFunc) calls the test function and the function callbackFunc is passed as an argument which is stored in the parameter callback so when we write callback() we are infact calling callbackFunc() so 'calling the callback function' is printed although 5 is returned here but since there is no return in test nothing is returned and the variable is undefined.
+
+
+test(callbackFunc())
+'calling the callback function' is displayed on the screen with an error showing 'callback is not a function'
+Here callbackFunc() is invoked in test(callbackFunc()) itself and thus 'calling the callback function' is printed and value 5 is returned which is then passed as an argument to test which is then assigned to the parameter callback and since there is no function named 5 it displays an error 'callback is not a function'.
+
+
+test(()=>callbackFunc())
+'calling the callback function' is displayed on the screen but no value is returned and it is undefined.
+Since function can be used as value in javascript arrow function itself is passed as an argument to test() and assigned to parameter callback .
+Then when callback() is written arrow function is invoked which in turn calls the callbackFunc() and print 'calling the callback function' and it also return the value 5 but since test don't have any return no value is returned and undefined is shown. 
+
+
+when we return callback() from the test function
+
+test(callbackFunc) : value 5 is returned
+test(callbackFunc()) : 'callback is not a function' error is printed
+test(()=>callbackFunc()) : value 5 is returned
+
+
+when we return callback from the test function
+
+test(callbackFunc) : callbackFunc description is returned
+test(callbackFunc()) : value 5 is returned
+test(()=>callbackFunc()) : ()=>callbackFunc() arrow function is returned
+
+

@@ -1,0 +1,24 @@
+Answer 1
+
+If we use return instead of break in for loop / while loop / switch case then if it is used without an argument it simply ends the function and returns to where the code was executing previously i.e. to the caller of the function.
+So the statements after the loop will not run .
+
+If we return any value then that will be returned , if no data is returned then if we store the value of function in variable it will show undefined.
+
+If required we can also use return statement from inside the for loop to pass a value only if for is used inside a function or it will give an error 'Illegal return statement'. An example can be if we have to just check whether a number is prime or not.
+
+function prime(n)
+{
+    for(let i=2 ; i<n ; i++)
+    {
+        if(n%i==0)
+         return "not prime"
+    }
+    return "prime"
+}
+console.log(prime(25))
+
+output
+not prime
+
+Similarly in case of if block it is inside a function then we can use return to return any value but same here it will not execute the statements after the if block , whereas if we use if block in the main area then it will show an error 'Illegal return statement'.
