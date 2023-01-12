@@ -1,9 +1,0 @@
-Answer 3 
-
-let arraySize = 25;
-let arr = [];
-for(let i=1 ; i<=arraySize ; i++)
-{
-    arr.push(i);
-}
-console.log(arr);
