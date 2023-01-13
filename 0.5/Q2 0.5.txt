@@ -1,0 +1,8 @@
+Answer 2
+
+There is two way to access an index in string using square bracket notation or charAt.
+
+If we access an index beyond range using square bracket notation we get undefined where using charAt nothing is desplayed just an empty space.
+
+If we pass a negative index we get the same output as passing an index beyond range using square bracket notation we get undefined where using charAt nothing is desplayed just an empty space.
+

@@ -1,0 +1,30 @@
+Answer 4
+
+If a regular JSON string is passed to JSON.parse then an object is returned which is parsed from the string in the parameter.
+Whereas if a invalid JSON string is passed an error is generated 'Uncaught SyntaxError'.
+Although if an invalid JSON string is stringified using JSON.stringify and then passed to JSON.parse no error is generated but it simply returns the stringified value.
+
+let a = '{"v1":1}'
+let temp = JSON.parse(a)
+console.log(temp)
+
+a="Hello"
+let x = JSON.stringify(a)
+temp = JSON.parse(x)
+console.log(temp)
+
+temp = JSON.parse(a)
+console.log(temp)
+
+Output
+
+{v1: 1}
+Hello
+Uncaught SyntaxError: Unexpected token 'H', "Hello" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at javascript.js:10:13
+
+
+If such an invalid function runs in the program a syntax error is generated refering it is not a valid JSON string.
+After this other parts of the code also do not get executed and the program is terminated.
+

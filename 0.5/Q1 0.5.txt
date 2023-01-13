@@ -1,0 +1,17 @@
+Answer 1
+
+In case of i++ first the value is assigned and then it is incremented in other words ++ before i means incrementation must be carried out before assignment.
+Whereas in case of ++i first the value get incremented and then get assigned i.e. ++ after i means incrementation must be carried out after assignment.
+
+let a
+let i=0
+a=i++
+console.log("after i++",a,i)
+i=0
+a=++i
+console.log("after ++i",a,i)
+
+output
+ 
+after i++ 0 1
+after ++i 1 1

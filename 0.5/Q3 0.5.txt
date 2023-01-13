@@ -1,0 +1,50 @@
+Answer 3
+
+JSON.stringify works on array as well and converts an array to a string.
+
+let arr = [1,2,3,4,5]
+let x = JSON.stringify(arr)
+
+console.log(x)
+
+Output
+
+//a stringified array
+[1,2,3,4,5]
+
+JSON.stringify also works on nested objects and returns a string which is object in its stringified format.
+
+let obj = {
+    val1 : 1 ,
+    val2 : {
+        "v1" : 2 ,
+        "v2" : 3
+    }
+}
+let x = JSON.stringify(obj)
+
+console.log(x)
+
+Output 
+
+//an stringified object
+{"val1":1,"val2":{"v1":2,"v2":3}}
+
+If we pass numbers , strings , undefined , null to JSON.stringify
+Numbers , string and null get stringified and converted to string but undefined remains as undefined.
+
+let a 
+console.log(JSON.stringify(a))
+a = 10
+console.log(JSON.stringify(a))
+a = "Hello"
+console.log(JSON.stringify(a))
+a = null
+console.log(JSON.stringify(a))
+
+Output
+
+undefined
+10
+"Hello"
+null
