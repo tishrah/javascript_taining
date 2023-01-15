@@ -1,0 +1,83 @@
+Answer 2
+
+Mutating methods are ones that change the object after the method has been used. 
+Non-mutating methods do not change the object after the method has been used.
+
+To verify we can display the array before after using the methods to see whether is modified i.e. mutated or not.
+
+Mutating : 
+push
+pop
+sort
+
+Non Mutating :
+filter
+find
+
+push :
+The push() method adds zero or more elements to the end of the array.
+
+let arr = [5,3,1,2,4]
+console.log(arr)
+arr.push(7)
+console.log(arr)
+
+Output :
+(5) [5, 3, 1, 2, 4]
+(6) [5, 3, 1, 2, 4, 7]
+
+pop :
+The pop() method removes the last element from an array and returns that element.
+
+let arr = [5,3,1,2,4]
+console.log(arr)
+arr.pop()
+console.log(arr)
+
+Output :
+(5) [5, 3, 1, 2, 4]
+(4) [5, 3, 1, 2]
+
+sort :
+The sort() method sorts the items of an array in a specific order (ascending or descending).
+
+let arr = [5,3,1,2,4]
+console.log(arr)
+arr.sort()
+console.log(arr)
+
+Output :
+(5) [5, 3, 1, 2, 4]
+(5) [1, 2, 3, 4, 5]
+
+filter:
+The filter() method returns a new array with all elements that pass the test defined by the given function.
+
+let arr = [5,3,1,2,4]
+console.log(arr)
+arr.filter(i => i==1)
+console.log(arr)
+let temp = arr.filter(i => (i==1)?true:false)
+console.log(temp)
+
+Output :
+(5) [5, 3, 1, 2, 4]
+(5) [5, 3, 1, 2, 4]
+[1]
+here we can see there is not change in the original array instead filter() method returns a separate array with our desired result.
+
+find :
+The find() method returns the value of the first array element that satisfies the provided test function.
+
+let arr = [5,3,1,2,4]
+console.log(arr)
+arr.find(i => i==1)
+console.log(arr)
+let temp = arr.filter(i => (i==1)?true:false)
+console.log(temp)
+
+Output :
+(5) [5, 3, 1, 2, 4]
+(5) [5, 3, 1, 2, 4]
+[1]
+Here also we can see there is not change in the original array instead find() method returns the value of the first element in the array that satisfies the given function.
