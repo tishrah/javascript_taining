@@ -1,0 +1,167 @@
+Answer 1 
+
+i) Function filterByName that accepts a string as a parameter and returns an array with only those objects where the first_name field includes that string.
+
+function filterByName(str)
+    {
+        let ans = (arr.find(details => details.first_name==str))
+        return ans;
+    }
+console.log(filterByName("Sam"))
+
+Output :
+
+{id: 8, first_name: 'Sam', email: 'scorck7@sitemeter.com', date_of_birth: '2020/08/30'}
+date_of_birth: "2020/08/30"
+email: "scorck7@sitemeter.com"
+first_name: "Sam"
+id: 8
+
+find() only returns the first occurence but if there are multiple occurences then we can use filter to get all the values satisfying the condition.
+In other words the filter() method returns a new array with all elements that pass the test defined by the given function whereas ,
+the find() method returns the value of the first array element that satisfies the provided test function.
+
+function filterByName(str)
+    {
+        let ans = (arr.filter(details => details.first_name==str))
+        return ans;
+    }
+console.log(filterByName("Sam"))
+
+Output :
+[{…}]
+0: {id: 8, first_name: 'Sam', email: 'scorck7@sitemeter.com', date_of_birth: '2020/08/30'}
+length: 1
+[[Prototype]]: Array(0)
+
+
+ii) Array.map to return an array of all the email fields.
+The map() method creates a new array with the results of calling a function for every array element.
+
+let ans = (arr.map(val => val.email))
+console.log(ans)
+
+Output :
+
+(10) ['ncrozier0@squarespace.com', 'rmcgrady1@cpanel.net', 'dkilshall2@elpais.com', 'abraiden3@canalblog.com', 'vheap4@clickbank.net', 'fcrichton5@merriam-webster.com', 'kvasyukhnov6@devhub.com', 'scorck7@sitemeter.com', 'vferandez8@e-recht24.de', 'tpetyt9@upenn.edu']
+0: "ncrozier0@squarespace.com"
+1: "rmcgrady1@cpanel.net"
+2: "dkilshall2@elpais.com"
+3: "abraiden3@canalblog.com"
+4: "vheap4@clickbank.net"
+5: "fcrichton5@merriam-webster.com"
+6: "kvasyukhnov6@devhub.com"
+7: "scorck7@sitemeter.com"
+8: "vferandez8@e-recht24.de"
+9: "tpetyt9@upenn.edu"
+length: 10
+[[Prototype]]: Array(0)
+
+
+iii) Sorting the array in descending order by date_of_birth using Array.sort()
+
+arr.sort((a,b) => a.date_of_birth > b.date_of_birth ? -1 : 1)
+console.log(arr)
+
+Output :
+
+(10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+0: {id: 5, first_name: 'Venita', email: 'vheap4@clickbank.net', date_of_birth: '2020/10/04'}
+1: {id: 8, first_name: 'Sam', email: 'scorck7@sitemeter.com', date_of_birth: '2020/08/30'}
+2: {id: 3, first_name: 'Demetris', email: 'dkilshall2@elpais.com', date_of_birth: '2018/12/31'}
+3: {id: 10, first_name: 'Townie', email: 'tpetyt9@upenn.edu', date_of_birth: '2018/09/01'}
+4: {id: 4, first_name: 'Amata', email: 'abraiden3@canalblog.com', date_of_birth: '2012/05/23'}
+5: {id: 7, first_name: 'Kathleen', email: 'kvasyukhnov6@devhub.com', date_of_birth: '2010/12/20'}
+6: {id: 6, first_name: 'Fairfax', email: 'fcrichton5@merriam-webster.com', date_of_birth: '2009/12/23'}
+7: {id: 1, first_name: 'Nicki', email: 'ncrozier0@squarespace.com', date_of_birth: '2009/05/09'}
+8: {id: 9, first_name: 'Virgilio', email: 'vferandez8@e-recht24.de', date_of_birth: '2000/09/07'}
+9: {id: 2, first_name: 'Raychel', email: 'rmcgrady1@cpanel.net', date_of_birth: '1996/11/05'}
+length: 10
+[[Prototype]]: Array(0)
+
+working of compare function in array.sort it will check the condition and if a.date_of_birth is greater than b.date_of_birth then compare function will give -1 and if value of compasre function is <0 then a comes first or if it is >0 then b comes first
+
+
+iv) Function getById that accepts a number as a parameter and returns the object where the id is equal to that number.
+
+Can be done using find() method
+function getById(n)
+{
+    return arr.find((arr)=>arr.id==n)
+}
+
+console.log(getById(1))
+
+Output :
+
+{id: 1, first_name: 'Nicki', email: 'ncrozier0@squarespace.com', date_of_birth: '2009/05/09'}
+
+
+Another way of doing this can be using findIndex() method which will return the index of the array where the condition is met and then we can access the data.
+
+function getById(n)
+{
+    return arr[arr.findIndex((arr)=>arr.id==n)]
+}
+
+console.log(getById(10))
+
+Output :
+
+{id: 10, first_name: 'Townie', email: 'tpetyt9@upenn.edu', date_of_birth: '2018/09/01'}
+
+
+Sample array used in above question
+
+[{
+"id": 1,
+"first_name": "Nicki",
+"email": "ncrozier0@squarespace.com",
+"date_of_birth": "2009/05/09"
+}, {
+"id": 2,
+"first_name": "Raychel",
+"email": "rmcgrady1@cpanel.net",
+"date_of_birth": "1996/11/05"
+}, {
+"id": 3,
+"first_name": "Demetris",
+"email": "dkilshall2@elpais.com",
+"date_of_birth": "2018/12/31"
+}, {
+"id": 4,
+"first_name": "Amata",
+"email": "abraiden3@canalblog.com",
+"date_of_birth": "2012/05/23"
+}, {
+"id": 5,
+"first_name": "Venita",
+"email": "vheap4@clickbank.net",
+"date_of_birth": "2020/10/04"
+}, {
+"id": 6,
+"first_name": "Fairfax",
+"email": "fcrichton5@merriam-webster.com",
+"date_of_birth": "2009/12/23"
+}, {
+"id": 7,
+"first_name": "Kathleen",
+"email": "kvasyukhnov6@devhub.com",
+"date_of_birth": "2010/12/20"
+}, {
+"id": 8,
+"first_name": "Sam",
+"email": "scorck7@sitemeter.com",
+"date_of_birth": "2020/08/30"
+}, {
+"id": 9,
+"first_name": "Virgilio",
+"email": "vferandez8@e-recht24.de",
+"date_of_birth": "2000/09/07"
+}, {
+"id": 10,
+"first_name": "Townie",
+"email": "tpetyt9@upenn.edu",
+"date_of_birth": "2018/09/01"
+}]
+
