@@ -1,0 +1,54 @@
+Answer 1 
+
+Unlike primitive data types objects are stored and copied by reference.It means that the object is stored somewhere in memory while the variable has a reference to it .
+So when we normally try to copy it to another variable is simply references to the same object so if we do any changes in anyone it will be reflected in both.
+So to create a copy we have three options :
+1.Use the spread (...) syntax
+2.Use the Object.assign() method
+3.Use the JSON.stringify() and JSON.parse() methods
+
+Both spread (...) and Object.assign() perform a shallow copy while the JSON methods carry a deep copy.
+A deep copying means that value of the new variable is disconnected from the original variable while a shallow copy means that some values are still connected to the original variable.
+A shallow copy : Top level properties will be unique for the original and the copied object. Nested properties will be shared across both objects though.
+A deep copy : All properties are unique for the original and the copied object, even nested properties.
+
+
+let obj = {
+    name:"Harry Potter",
+    age: 12,
+    address: {
+     details: ["4", "Privet Drive"],
+     area:"Little Whinging",
+     city: "Surrey",
+     state: "England"
+    } 
+   }
+
+let temp = JSON.parse(JSON.stringify(obj))
+temp.address.details[0]="5"
+
+console.log(obj)
+console.log(temp)
+
+Output : 
+{name: 'Harry Potter', age: 12, address: {…}}
+address: 
+area:"Little Whinging"
+city:"Surrey"
+details:(2) ['4', 'Privet Drive']
+state:"England"
+[[Prototype]]:Object
+age:12
+name:"Harry Potter"
+[[Prototype]]: Object
+
+{name: 'Harry Potter', age: 12, address: {…}}
+address: 
+area:"Little Whinging"
+city:"Surrey"
+details:(2) ['5', 'Privet Drive']
+state:"England"
+[[Prototype]]:Object
+age:12
+name:"Harry Potter"
+[[Prototype]]: Object
