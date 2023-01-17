@@ -1,0 +1,18 @@
+Answer 2
+
+let obj = {
+    "a" : 1,
+    "b" : [1,2,3],
+    "c" : {"4":4}
+}
+function deepClone(p1)
+{
+    return JSON.parse(JSON.stringify(p1))
+}
+console.log(deepClone(obj))
+
+Output :
+{a: 1, b: Array(3), c: {…}}
+a: 1
+b: (3) [1, 2, 3]
+c: {4: 4}

@@ -1,0 +1,25 @@
+Answer 3
+
+let obj = {
+    name:"Harry Potter",
+    age: 12,
+    address: {
+    details: ["4", "Privet Drive"],
+    area:"Little Whinging",
+    city: "Surrey",
+    state: "England"
+    } 
+  }
+function getNestedKey(p1,str)
+{
+    let arr = str.split(".")
+    let ans = p1;
+    for(let i in arr)
+        ans=ans[arr[i]]
+    return ans;
+
+}
+console.log(getNestedKey(obj,"address.details.1"))
+
+Output :
+Privet Drive
