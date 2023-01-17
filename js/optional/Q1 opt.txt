@@ -1,0 +1,28 @@
+Answer 1
+
+let a = [1,[2.0,2.5],3,{"4":4}]
+let b = [1,[2.0,2.5],3,{"4":4}]
+
+let obj1 = {
+    "a" : 1,
+    "b" : [1,2,3],
+    "c" : {"4":4}
+}
+let obj2 = {
+    "a" : 1,
+    "b" : [1,2,3],
+    "c" : {"4":4}
+}
+
+function check(p1,p2)
+{
+    return JSON.stringify(p1)===JSON.stringify(p2)
+}
+console.log(check(a,b))
+console.log(check(obj1,obj2))
+
+
+Output :
+
+true
+true

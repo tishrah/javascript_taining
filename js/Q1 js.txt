@@ -1,0 +1,33 @@
+Answer 1
+
+let users = [{
+    "id": 1,
+    "first_name": "Nicki",
+    "email": "ncrozier0@squarespace.com",
+    "date_of_birth": "2009/05/09"
+    }, {
+    "id": 2,
+    "first_name": "Raychel",
+    "email": "rmcgrady1@cpanel.net",
+    "date_of_birth": "1996/11/05"
+    }];
+
+function mapBy(arr , s)
+{
+   return Object.assign({},arr.map((val)=>{
+    return {key:val[s],value:val}
+   }))
+   
+}
+
+console.log(mapBy(users, "first_name"))
+
+Output :
+{0: {…}, 1: {…}}
+0: 
+key: "Nicki"
+value: {id: 1, first_name: 'Nicki', email: 'ncrozier0@squarespace.com', date_of_birth: '2009/05/09'}
+[[Prototype]]: Object
+1: 
+key: "Raychel"
+value: {id: 2, first_name: 'Raychel', email: 'rmcgrady1@cpanel.net', date_of_birth: '1996/11/05'}

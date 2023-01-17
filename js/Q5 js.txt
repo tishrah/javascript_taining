@@ -1,0 +1,19 @@
+Answer 5 
+
+let arr = ["a","a","b","c","a","b"]
+
+function unique(arr)
+{
+    let ans = []
+    arr.forEach(element => {
+        if(!ans.includes(element))
+           ans.push(element)
+        
+    });
+    return ans;
+}
+console.log(unique(arr))
+
+Output:
+
+(3) ['a', 'b', 'c']
