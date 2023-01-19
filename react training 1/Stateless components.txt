@@ -1,0 +1,53 @@
+//App.js
+
+import React from "react";
+  
+function App()
+{
+  return(
+  <>
+  <input type="text" placeholder="Search.."/>
+  <br></br>
+  <input type="checkbox"/>
+  <span> Only show products in stock</span>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+    <tr>Sporting Goods</tr>
+    <tr>
+      <td>Football</td>
+      <td>$49.99</td>
+    </tr>
+    <tr>
+      <td>Baseball</td>
+      <td>$9.99</td>
+    </tr>
+    <tr>
+      <td>Basketball</td>
+      <td>$29.99</td>
+    </tr>
+    <tr>Electronics</tr>
+    <tr>
+      <td>Ipod touch</td>
+      <td>$99.99</td>
+    </tr>
+    <tr>
+      <td>Iphone 5</td>
+      <td>$399.99</td>
+    </tr>
+    <tr>
+      <td>Nexus 7</td>
+      <td>$199.99</td>
+    </tr>
+  </table>
+  </>)
+}
+
+export default App;
+
+
+//Above all are stateless components
+//The main difference between state and stateless components is that one has state, and the other doesn’t. That means the stateful components are keeping track of changing data, while stateless components print out what is given to them via props, or they always render the same thing.
+
